@@ -1,14 +1,18 @@
 # codebasics ML course: codebasics.io, all rights reserverd
 
-import pandas as pd
 import os
+import pandas as pd
+import joblib
 
+# Base directory = location of this script (prediction_helper.py)
 BASE_DIR = os.path.dirname(__file__)
 
+# Load models using cross-platform paths
 model_young = joblib.load(os.path.join(BASE_DIR, "artifacts", "model_young.joblib"))
 model_rest = joblib.load(os.path.join(BASE_DIR, "artifacts", "model_rest.joblib"))
 scaler_young = joblib.load(os.path.join(BASE_DIR, "artifacts", "scaler_young.joblib"))
 scaler_rest = joblib.load(os.path.join(BASE_DIR, "artifacts", "scaler_rest.joblib"))
+
 
 
 def calculate_normalized_risk(medical_history):
