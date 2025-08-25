@@ -1,7 +1,7 @@
 # codebasics ML course: codebasics.io, all rights reserverd
 
 import streamlit as st
-from prediction_helper import predict
+import prediction_helper 
 
 # Define the page layout
 st.title('Health Insurance Cost Predictor')
@@ -74,5 +74,5 @@ input_dict = {
 
 # Button to make prediction
 if st.button('Predict'):
-    prediction = predict(input_dict)
+    prediction = prediction_helper.predict(input_dict)
     st.success(f'Predicted Health Insurance Cost: {prediction}')
